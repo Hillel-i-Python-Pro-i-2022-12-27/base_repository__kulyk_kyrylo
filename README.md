@@ -57,3 +57,16 @@ Migrate
 ```shell
 make migrate
 ```
+***
+## 🐳SuperUser
+### 🔩Create
+Create superuser with standard parameters (username, password, email)
+```shell
+make init-dev-i-create-superuser
+```
+### 🗑️Delete
+Delete all SuperUser
+```shell
+make init-dev-i-delete-superuser
+```
+***

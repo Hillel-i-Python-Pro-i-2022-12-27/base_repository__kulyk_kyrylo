@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if title %}
+            {{ title }} |
+        {% endif %}
+        Django Apps
+    </title>
+
+    {# [connect_bootstrap] - [BEGIN] #}
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    >
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+    ></script>
+    {# [connect_bootstrap] - [END] #}
+    <link
+            href="{% static 'styles/index.css' %}"
+            rel="stylesheet"
+    >
+    <link rel="icon" type="image/svg+xml" href="{% static "./favicons/favicon.svg" %}">
+    <style>
+        .footer {
+            position: fixed;
+            left: 50px;
+            bottom: 2px;
+            right: 10px;
+            width: 95%;
+            background-color: #c7c6c6;
+            color: #020202;
+            text-align: center;
+            border-radius: 5px;
+            margin: .5em;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    {% include "_helpers/_header.html" %}
+    {% block content %}
+        Hello!
+    {% endblock %}
+</div>
+<div class="footer">
+    <p>
+        Learn for your dreams! <a href=https://odessa.ithillel.ua/"> Computer school Hillel </a>
+    </p>
+    <p>
+        Our Github <a href=https://github.com/Hillel-i-Python-Pro-i-2022-12-27"> Hillel Python Pro 27.12.2022 </a>
+    </p>
+</div>
+</body>
+</html>
