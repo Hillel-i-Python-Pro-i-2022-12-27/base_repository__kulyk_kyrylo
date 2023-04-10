@@ -57,8 +57,8 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    # "crispy_forms",
-    # "crispy_bootstrap5",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -74,6 +74,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {

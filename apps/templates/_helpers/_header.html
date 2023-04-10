@@ -1,0 +1,44 @@
+<header>
+    <nav class="navbar navbar-light navbar" style="background-color: rgba(200,200,201,0.87);
+            border-radius: 5px;">
+        <ul class="navbar-nav my-element-box">
+            <div id="logo">
+                <object
+                    type="image/svg+xml"
+                    data="/static/logo/logo.svg">
+                    <img
+                        src="/static/logo/logo.svg"
+                        id="logo"
+                        alt="">
+                </object>
+            </div>
+            <div class="col my-element-box">
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "root:index" %}">Main page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "admin:index" %}">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "root:about_us" %}">About us</a>
+                </li>
+            </div>
+        </ul>
+        <ul class="navbar-nav my-element-box">
+            <div class="user-box">
+            {% if user.is_authenticated %}
+            <div class="user-info">
+                <p>Hello! Dear, {{ user.username }}!</p>
+                </div>
+                    <a type="button" class="btn btn-warning" href="{% url "logout" %}">Log Out</a>
+                    <a type="button" class="btn btn-info" href="{% url "users:details" pk=user.id %}">Details</a>
+            {% else %}
+                <p>You are unknown user!</p>
+                <p>You need sign in or registration!!</p>
+                <a type="button" class="btn btn-primary" href="{% url "login" %}">Log In</a>
+                <a type="button" class="btn btn-primary" href="{% url "users:registration" %}">Registration</a>
+            {% endif %}
+            </div>
+        </ul>
+    </nav>
+</header>

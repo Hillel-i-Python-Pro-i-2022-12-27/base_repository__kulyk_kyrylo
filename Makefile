@@ -86,3 +86,14 @@ migrate:
 # Kill services by port
 util-i-kill-by-port:
 	@sudo lsof -i:8000 -Fp | head -n 1 | sed 's/^p//' | xargs sudo kill
+
+
+.PHONY: init-dev-i-create-superuser
+# Create standard superuser
+init-dev-i-create-superuser:
+	@python manage.py create_superuser
+
+.PHONY: init-dev-i-delete-superuser
+# Delete superuser
+init-dev-i-delete-superuser:
+	@python manage.py delete_superuser
